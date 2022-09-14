@@ -5,10 +5,11 @@ from flask_restful import Api, Resource, reqparse
 app = Flask(__name__)
 api = Api(app)
 
-
 video_args = reqparse.RequestParser()
-video_args.add_argument("nome", type=str, help="Inserir nome do video", required=True   )
-video_args.add_argument("likes", type=int, help="Inserir número de gostos", required=True   )
+
+# Arguments required
+video_args.add_argument("nome", type=str, help="Inserir nome do video", required=True)
+video_args.add_argument("likes", type=int, help="Inserir número de gostos", required=True)
 video_args.add_argument("views", type=int, help="Inserir visualizações do video", required=True )
 
 videos = {}
